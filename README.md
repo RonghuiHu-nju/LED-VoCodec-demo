@@ -1,3 +1,18 @@
+# Latent Enhancement Distillation (LED) for Joint Audio Codec and Speech Enhancement
+
+[![Status](https://img.shields.io/badge/Status-Under_Review_(TASLP)-blue)](#)
+[![Challenge](https://img.shields.io/badge/LRAC_Challenge_2025-1st_Place-gold)](#)
+
+This repository contains the official audio demonstrations for our paper **"Latent Enhancement Distillation for Joint Audio Codec and Speech Enhancement"** (currently under review for IEEE/ACM TASLP). 
+
+🏆 **Our proposed LED-VoCodec system ranked 1st in the 2025 Low-Resource Audio Codec (LRAC) Challenge.**
+
+## 📖 Abstract
+Neural audio codecs (NACs) have recently emerged as a powerful paradigm for low-bitrate speech compression. Their widespread deployment on resource-constrained edge devices imposes strict requirements on computational complexity and bitrate. Meanwhile, real-world environments often contain noise, reverberation, and other distortions that degrade speech quality, making robust speech coding under such conditions a persistent challenge. 
+
+In this work, we propose **Latent Enhancement Distillation (LED)**, a codec-agnostic training paradigm for joint audio coding and speech enhancement (SE). Through cross-task knowledge distillation (CKD) in the latent space, LED adopts a three-stage progressive training scheme that enables a single NAC framework to perform effective denoising and dereverberation while preserving high-fidelity coding. 
+
+---
 ## 🎧 Audio Samples
 
 > **Instructions:** Click on the **[🔊 Listen]** links below. It will securely open GitHub's native audio player for that specific file.
