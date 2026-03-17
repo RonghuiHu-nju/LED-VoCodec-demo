@@ -23,25 +23,25 @@ The following tables demonstrate the reconstruction quality of the proposed LED 
 ### 1. Reference & Degraded Inputs
 | Condition | Sample 1 (`fileid_1`) | Sample 2 (`fileid_2`) |
 | :--- | :---: | :---: |
-| **Clean (Reference)** | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_clean.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_clean.wav"></audio> |
-| **Raw (Noisy/Reverb)** | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_raw.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_raw.wav"></audio> |
+| **Clean (Reference)** | <audio controls src="audio_sample/fileid_1_clean.wav"></audio> | <audio controls src="audio_sample/fileid_2_clean.wav"></audio> |
+| **Raw (Noisy/Reverb)** | <audio controls src="audio_sample/fileid_1_raw.wav"></audio> | <audio controls src="audio_sample/fileid_2_raw.wav"></audio> |
 
 ### 2. High Bitrate Comparisons (approx. 6 kbps)
 | Model | Bitrate | Sample 1 (`fileid_1`) | Sample 2 (`fileid_2`) |
 | :--- | :---: | :---: | :---: |
-| **LED-VoCodec (Ours)** | 6 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_LED-VoCodec-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_LED-VoCodec-6kbps.wav"></audio> |
-| **LED-VoCodec-L (Ours)** | 6 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_LED-VoCodec-L-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_LED-VoCodec-L-6kbps.wav"></audio> |
-| E2E-VoCodec (Baseline) | 6 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_E2E-VoCodec-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_E2E-VoCodec-6kbps.wav"></audio> |
-| DAC (Baseline) | 6 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_DAC-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_DAC-6kbps.wav"></audio> |
-| Encodec (Baseline) | 6 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_Encodec-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_Encodec-6kbps.wav"></audio> |
+| **LED-VoCodec (Ours)** | 6 kbps | <audio controls src="audio_sample/fileid_1_LED-VoCodec-6kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_LED-VoCodec-6kbps.wav"></audio> |
+| **LED-VoCodec-L (Ours)** | 6 kbps | <audio controls src="audio_sample/fileid_1_LED-VoCodec-L-6kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_LED-VoCodec-L-6kbps.wav"></audio> |
+| E2E-VoCodec (Baseline) | 6 kbps | <audio controls src="audio_sample/fileid_1_E2E-VoCodec-6kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_E2E-VoCodec-6kbps.wav"></audio> |
+| DAC (Baseline) | 6 kbps | <audio controls src="audio_sample/fileid_1_DAC-6kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_DAC-6kbps.wav"></audio> |
+| Encodec (Baseline) | 6 kbps | <audio controls src="audio_sample/fileid_1_Encodec-6kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_Encodec-6kbps.wav"></audio> |
 
 ### 3. Low Bitrate Comparisons (1 kbps ~ 3 kbps)
 | Model | Bitrate | Sample 1 (`fileid_1`) | Sample 2 (`fileid_2`) |
 | :--- | :---: | :---: | :---: |
-| **LED-VoCodec (Ours)** | 1 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_LED-VoCodec-1kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_LED-VoCodec-1kbps.wav"></audio> |
-| **LED-VoCodec-L (Ours)** | 1 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_LED-VoCodec-L-1kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_LED-VoCodec-L-1kbps.wav"></audio> |
-| E2E-VoCodec (Baseline) | 1 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_E2E-VoCodec-1kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_E2E-VoCodec-1kbps.wav"></audio> |
-| DAC (Baseline) | 1.5 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_DAC-1.5kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_DAC-1.5kbps.wav"></audio> |
-| Encodec (Baseline) | 3 kbps | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_1_Encodec-3kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/RonghuiHu-nju/LED-VoCodec-demo/main/audio_sample/fileid_2_Encodec-3kbps.wav"></audio> |
+| **LED-VoCodec (Ours)** | 1 kbps | <audio controls src="audio_sample/fileid_1_LED-VoCodec-1kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_LED-VoCodec-1kbps.wav"></audio> |
+| **LED-VoCodec-L (Ours)** | 1 kbps | <audio controls src="audio_sample/fileid_1_LED-VoCodec-L-1kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_LED-VoCodec-L-1kbps.wav"></audio> |
+| E2E-VoCodec (Baseline) | 1 kbps | <audio controls src="audio_sample/fileid_1_E2E-VoCodec-1kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_E2E-VoCodec-1kbps.wav"></audio> |
+| DAC (Baseline) | 1.5 kbps | <audio controls src="audio_sample/fileid_1_DAC-1.5kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_DAC-1.5kbps.wav"></audio> |
+| Encodec (Baseline) | 3 kbps | <audio controls src="audio_sample/fileid_1_Encodec-3kbps.wav"></audio> | <audio controls src="audio_sample/fileid_2_Encodec-3kbps.wav"></audio> |
 
 ---
