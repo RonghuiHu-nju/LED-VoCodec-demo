@@ -1,21 +1,45 @@
-# LED: Latent Enhancement Distillation for Joint Audio Codec and Speech Enhancement
+# Latent Enhancement Distillation (LED) for Joint Audio Codec and Speech Enhancement
 
-[![Audio Samples](https://img.shields.io/badge/🎧_Listen_to-Audio_Demo-blue?style=for-the-badge)](https://你的GitHub用户名.github.io/你的仓库名/)
-[![Paper](https://img.shields.io/badge/📄_Read-Paper-green?style=for-the-badge)](#) 
+[![Status](https://img.shields.io/badge/Status-Under_Review_(TASLP)-blue)](#)
+[![Challenge](https://img.shields.io/badge/LRAC_Challenge_2025-1st_Place-gold)](#)
 
-[cite_start]This repository contains the official audio demonstrations for our paper **"Latent Enhancement Distillation for Joint Audio Codec and Speech Enhancement"**[cite: 1, 2]. 
+This repository contains the official audio demonstrations for our paper **"Latent Enhancement Distillation for Joint Audio Codec and Speech Enhancement"** (currently under review for IEEE/ACM TASLP). 
 
-[cite_start]🏆 **Our LED-VoCodec system ranked 1st in the 2025 Low-Resource Audio Codec (LRAC) Challenge**[cite: 48].
-
-## 🌐 Interactive Audio Demo
-Please visit our **[GitHub Pages Audio Demo](https://你的GitHub用户名.github.io/你的仓库名/)** to listen to the reconstructed speech samples across different bitrates (1 kbps and 6 kbps) under noisy and reverberant conditions.
+[cite_start]🏆 **Our proposed LED-VoCodec system ranked 1st in the 2025 Low-Resource Audio Codec (LRAC) Challenge.**
 
 ## 📖 Abstract
-[cite_start]Neural audio codecs (NACs) have recently emerged as a powerful paradigm for low-bitrate speech compression[cite: 5, 16, 17]. [cite_start]Their widespread deployment on resource-constrained edge devices imposes strict requirements on computational complexity and bitrate[cite: 6]. [cite_start]Meanwhile, real-world environments often contain noise, reverberation, and other distortions that degrade speech quality, making robust speech coding under such conditions a persistent challenge[cite: 7]. 
+[cite_start]Neural audio codecs (NACs) have recently emerged as a powerful paradigm for low-bitrate speech compression[cite: 5]. [cite_start]Their widespread deployment on resource-constrained edge devices imposes strict requirements on computational complexity and bitrate[cite: 6]. [cite_start]Meanwhile, real-world environments often contain noise, reverberation, and other distortions that degrade speech quality, making robust speech coding under such conditions a persistent challenge[cite: 7]. 
 
-[cite_start]In this work, we propose **Latent Enhancement Distillation (LED)**, a codec-agnostic training paradigm for joint audio coding and speech enhancement (SE)[cite: 8]. [cite_start]Through cross-task knowledge distillation (CKD) in the latent space, LED adopts a three-stage progressive training scheme that enables a single NAC framework to perform effective denoising and dereverberation while preserving high-fidelity coding[cite: 9].
+[cite_start]In this work, we propose **Latent Enhancement Distillation (LED)**, a codec-agnostic training paradigm for joint audio coding and speech enhancement (SE)[cite: 8]. [cite_start]Through cross-task knowledge distillation (CKD) in the latent space, LED adopts a three-stage progressive training scheme that enables a single NAC framework to perform effective denoising and dereverberation while preserving high-fidelity coding[cite: 9]. 
 
-## ⚙️ The LED Paradigm
+---
 
-![LED Paradigm Schematic](assets/figure1_led_paradigm.png)
-*Figure: The Schematic of the LED paradigm. The framework involves three progressive stages: (1) training a high-fidelity teacher on clean speech, (2) distilling the student encoder via cross-task knowledge distillation, and (3) fine-tuning the student decoder.*
+## 🎧 Audio Samples
+
+[cite_start]The following tables demonstrate the reconstruction quality of the proposed LED paradigm compared to various baseline models across different bitrates[cite: 263, 264]. 
+
+> **Note:** The `<audio>` players below stream directly from this repository. If they do not load immediately, please ensure your browser allows media playback on GitHub.
+
+### 1. Reference & Degraded Inputs
+| Condition | Sample 1 (`fileid_1`) | Sample 2 (`fileid_2`) |
+| :--- | :---: | :---: |
+| **Clean (Reference)** | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_clean.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_clean.wav"></audio> |
+| **Raw (Noisy/Reverb)** | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_raw.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_raw.wav"></audio> |
+
+### 2. High Bitrate Comparisons (approx. 6 kbps)
+| Model | Bitrate | Sample 1 (`fileid_1`) | Sample 2 (`fileid_2`) |
+| :--- | :---: | :---: | :---: |
+| **LED-VoCodec (Ours)** | 6 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_LED-VoCodec-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_LED-VoCodec-6kbps.wav"></audio> |
+| **LED-VoCodec-L (Ours)** | 6 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_LED-VoCodec-L-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_LED-VoCodec-L-6kbps.wav"></audio> |
+| E2E-VoCodec (Baseline) | 6 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_E2E-VoCodec-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_E2E-VoCodec-6kbps.wav"></audio> |
+| DAC (Baseline) | 6 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_DAC-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_DAC-6kbps.wav"></audio> |
+| Encodec (Baseline) | 6 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_Encodec-6kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_Encodec-6kbps.wav"></audio> |
+
+### 3. Low Bitrate Comparisons (1 kbps ~ 3 kbps)
+| Model | Bitrate | Sample 1 (`fileid_1`) | Sample 2 (`fileid_2`) |
+| :--- | :---: | :---: | :---: |
+| **LED-VoCodec (Ours)** | 1 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_LED-VoCodec-1kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_LED-VoCodec-1kbps.wav"></audio> |
+| **LED-VoCodec-L (Ours)** | 1 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_LED-VoCodec-L-1kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_LED-VoCodec-L-1kbps.wav"></audio> |
+| E2E-VoCodec (Baseline) | 1 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_E2E-VoCodec-1kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_E2E-VoCodec-1kbps.wav"></audio> |
+| DAC (Baseline) | 1.5 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_DAC-1.5kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_DAC-1.5kbps.wav"></audio> |
+| Encodec (Baseline) | 3 kbps | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_1_Encodec-3kbps.wav"></audio> | <audio controls src="https://raw.githubusercontent.com/YourUsername/YourRepoName/main/audio_samples/fileid_2_Encodec-3kbps.wav"></audio> |
