@@ -19,11 +19,6 @@ The MUSHRA tests followed the standardized ITU-R BS.1534-3 methodology with the 
 ![Test Protocol](Figs/fig1.png)
 *Figure 1: MUSHRA test protocol and evaluation criteria used in LRAC Track 2*
 
-- **Participants**: 15 expert listeners certified for audio quality assessment
-- **Test environment**: Controlled acoustic environment with calibrated monitoring equipment
-- **Evaluation scale**: 0-100 MUSHRA scale with hidden reference and anchor
-- **Statistical validity**: 95% confidence intervals calculated using standard error of the mean
-- **Test stimuli**: 24 representative speech samples covering clean, noisy, and reverberant conditions
 
 ### Official Results
 The comprehensive MUSHRA evaluation results are shown below:
@@ -34,13 +29,8 @@ The comprehensive MUSHRA evaluation results are shown below:
 **Key Findings:**
 1. **LED-VoCodec achieves the highest MUSHRA scores** across all test conditions
 2. **Significant performance gap** observed at both 1 kbps and 6 kbps configurations
-3. **Consistent superiority** over all baseline methods including E2E-VoCodec, DAC, and EnCodec
+3. **Consistent superiority** over all baseline in the challenge
 4. **Robust performance** maintained across diverse acoustic conditions
-
-### Statistical Analysis
-- All performance differences are statistically significant (p < 0.01)
-- The 95% confidence intervals confirm the reliability of the results
-- LED-VoCodec demonstrates consistent preference across all listener groups
 
 ---
 ## 🎧 Audio Samples
@@ -48,13 +38,13 @@ The comprehensive MUSHRA evaluation results are shown below:
 > **Instructions:** Click on the **[🔊 Listen]** links below. It will securely open GitHub's native audio player for that specific file.
 
 ### 1. Reference & Degraded Inputs
-| Condition | Sample 1 (`fileid_1`) | Sample 2 (`fileid_2`) |
+| Condition | Sample 1 | Sample 2 |
 | :--- | :---: | :---: |
 | **Clean (Reference)** | [🔊 Listen to Clean](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_1_clean.wav) | [🔊 Listen to Clean](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_2_clean.wav) |
 | **Raw (Noisy/Reverb)** | [🔊 Listen to Raw](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_1_raw.wav) | [🔊 Listen to Raw](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_2_raw.wav) |
 
 ### 2. High Bitrate Comparisons (approx. 6 kbps)
-| Model | Bitrate | Sample 1 (`fileid_1`) | Sample 2 (`fileid_2`) |
+| Model | Bitrate | Sample 1 | Sample 2 |
 | :--- | :---: | :---: | :---: |
 | **LED-VoCodec (Ours)** | 6 kbps | [🔊 Listen to 6kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_1_LED-VoCodec-6kbps.wav) | [🔊 Listen to 6kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_2_LED-VoCodec-6kbps.wav) |
 | **LED-VoCodec-L (Ours)** | 6 kbps | [🔊 Listen to 6kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_1_LED-VoCodec-L-6kbps.wav) | [🔊 Listen to 6kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_2_LED-VoCodec-L-6kbps.wav) |
@@ -63,7 +53,7 @@ The comprehensive MUSHRA evaluation results are shown below:
 | Encodec (Baseline) | 6 kbps | [🔊 Listen to 6kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_1_Encodec-6kbps.wav) | [🔊 Listen to 6kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_2_Encodec-6kbps.wav) |
 
 ### 3. Low Bitrate Comparisons (1 kbps ~ 3 kbps)
-| Model | Bitrate | Sample 1 (`fileid_1`) | Sample 2 (`fileid_2`) |
+| Model | Bitrate | Sample 1 | Sample 2 |
 | :--- | :---: | :---: | :---: |
 | **LED-VoCodec (Ours)** | 1 kbps | [🔊 Listen to 1kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_1_LED-VoCodec-1kbps.wav) | [🔊 Listen to 1kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_2_LED-VoCodec-1kbps.wav) |
 | **LED-VoCodec-L (Ours)** | 1 kbps | [🔊 Listen to 1kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_1_LED-VoCodec-L-1kbps.wav) | [🔊 Listen to 1kbps](https://github.com/RonghuiHu-nju/LED-VoCodec-demo/blob/main/audio_sample/fileid_2_LED-VoCodec-L-1kbps.wav) |
@@ -79,9 +69,9 @@ We evaluate LED-VoCodec's robustness across five challenging scenarios to demons
 Test samples from languages not seen during training:
 
 ![Cross-Language Results](Figs/fig4.png)
-*Figure 3: Performance on cross-language test sets*
+*Figure 3: Performance on cross-language test sets, Unseen Noise Types and Unseen Reverberation*
 
-#### German Sample (`sample1_germany`)
+#### German Sample
 | Model | Bitrate | Audio Sample |
 | :--- | :---: | :---: |
 | **Raw Input** | - | [🔊 Listen](samples/cross%20language/sample1_germany/raw.wav) |
@@ -91,7 +81,7 @@ Test samples from languages not seen during training:
 | **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/cross%20language/sample1_germany/6kbps_stage3_1250.wav) |
 | **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/cross%20language/sample1_germany/6kbps_e2e_1250.wav) |
 
-#### Chinese Sample (`sample2_chinese`)
+#### Chinese Sample
 | Model | Bitrate | Audio Sample |
 | :--- | :---: | :---: |
 | **Raw Input** | - | [🔊 Listen](samples/cross%20language/sample2_chinese/raw.wav) |
@@ -101,10 +91,57 @@ Test samples from languages not seen during training:
 | **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/cross%20language/sample2_chinese/6kbps_stage3_1250.wav) |
 | **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/cross%20language/sample2_chinese/6kbps_e2e_1250.wav) |
 
-### 2. Impulsive Noise
+### 2. Unseen Noise Types
+Test with noise types not included in training:
+
+#### Sample 1
+| Model | Bitrate | Audio Sample |
+| :--- | :---: | :---: |
+| **Raw Input** | - | [🔊 Listen](samples/unseen%20noise/sample1/raw.wav) |
+| **Reference (Clean)** | - | [🔊 Listen](samples/unseen%20noise/sample1/ref.wav) |
+| **LED-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20noise/sample1/1kbps_stage3_1250.wav) |
+| **E2E-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20noise/sample1/1kbps_e2e_1250.wav) |
+| **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20noise/sample1/6kbps_stage3_1250.wav) |
+| **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20noise/sample1/6kbps_e2e_1250.wav) |
+
+#### Sample 2
+| Model | Bitrate | Audio Sample |
+| :--- | :---: | :---: |
+| **Raw Input** | - | [🔊 Listen](samples/unseen%20noise/sample2/raw.wav) |
+| **Reference (Clean)** | - | [🔊 Listen](samples/unseen%20noise/sample2/ref.wav) |
+| **LED-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20noise/sample2/1kbps_stage3_1250.wav) |
+| **E2E-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20noise/sample2/1kbps_e2e_1250.wav) |
+| **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20noise/sample2/6kbps_stage3_1250.wav) |
+| **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20noise/sample2/6kbps_e2e_1250.wav) |
+
+### 3. Unseen Reverberation
+Test with room reverberation effects:
+
+#### Sample 1
+| Model | Bitrate | Audio Sample |
+| :--- | :---: | :---: |
+| **Raw Input** | - | [🔊 Listen](samples/unseen%20reverb/sample1/raw.wav) |
+| **Reference (Clean)** | - | [🔊 Listen](samples/unseen%20reverb/sample1/ref.wav) |
+| **LED-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20reverb/sample1/1kbps_stage3_1250.wav) |
+| **E2E-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20reverb/sample1/1kbps_e2e_1250.wav) |
+| **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20reverb/sample1/6kbps_stage3_1250.wav) |
+| **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20reverb/sample1/6kbps_e2e_1250.wav) |
+
+#### Sample 2
+| Model | Bitrate | Audio Sample |
+| :--- | :---: | :---: |
+| **Raw Input** | - | [🔊 Listen](samples/unseen%20reverb/sample2/raw.wav) |
+| **Reference (Clean)** | - | [🔊 Listen](samples/unseen%20reverb/sample2/ref.wav) |
+| **LED-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20reverb/sample2/1kbps_stage3_1250.wav) |
+| **E2E-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20reverb/sample2/1kbps_e2e_1250.wav) |
+| **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20reverb/sample2/6kbps_stage3_1250.wav) |
+| **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20reverb/sample2/6kbps_e2e_1250.wav) |
+
+
+### 4. Impulsive Noise
 Test with burst noise and clicks:
 
-![Impulsive Noise Analysis](Figs/fig3.pdf)
+![Impulsive Noise Analysis](Figs/fig3.png)
 *Figure 4: Analysis of impulsive noise handling*
 
 #### Sample 1
@@ -127,7 +164,7 @@ Test with burst noise and clicks:
 | **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/impulsive%20noise/sample2/6kbps_stage3_1250.wav) |
 | **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/impulsive%20noise/sample2/6kbps_e2e_1250.wav) |
 
-### 3. Ultra-Low SNR Conditions
+### 5. Ultra-Low SNR Conditions
 Test at extremely low signal-to-noise ratios:
 
 ![Ultra-Low SNR Results](Figs/fig5.png)
@@ -153,57 +190,6 @@ Test at extremely low signal-to-noise ratios:
 | **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/ultra-low%20snr/sample2/6kbps_stage3_1250.wav) |
 | **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/ultra-low%20snr/sample2/6kbps_e2e_1250.wav) |
 
-### 4. Unseen Noise Types
-Test with noise types not included in training:
-
-![Unseen Noise Results](Figs/fig4.png)
-*Figure 6: Performance on unseen noise categories*
-
-#### Sample 1
-| Model | Bitrate | Audio Sample |
-| :--- | :---: | :---: |
-| **Raw Input** | - | [🔊 Listen](samples/unseen%20noise/sample1/raw.wav) |
-| **Reference (Clean)** | - | [🔊 Listen](samples/unseen%20noise/sample1/ref.wav) |
-| **LED-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20noise/sample1/1kbps_stage3_1250.wav) |
-| **E2E-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20noise/sample1/1kbps_e2e_1250.wav) |
-| **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20noise/sample1/6kbps_stage3_1250.wav) |
-| **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20noise/sample1/6kbps_e2e_1250.wav) |
-
-#### Sample 2
-| Model | Bitrate | Audio Sample |
-| :--- | :---: | :---: |
-| **Raw Input** | - | [🔊 Listen](samples/unseen%20noise/sample2/raw.wav) |
-| **Reference (Clean)** | - | [🔊 Listen](samples/unseen%20noise/sample2/ref.wav) |
-| **LED-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20noise/sample2/1kbps_stage3_1250.wav) |
-| **E2E-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20noise/sample2/1kbps_e2e_1250.wav) |
-| **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20noise/sample2/6kbps_stage3_1250.wav) |
-| **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20noise/sample2/6kbps_e2e_1250.wav) |
-
-### 5. Unseen Reverberation
-Test with room reverberation effects:
-
-![Unseen Reverberation Results](Figs/fig4.png)
-*Figure 7: Performance on unseen reverberation profiles*
-
-#### Sample 1
-| Model | Bitrate | Audio Sample |
-| :--- | :---: | :---: |
-| **Raw Input** | - | [🔊 Listen](samples/unseen%20reverb/sample1/raw.wav) |
-| **Reference (Clean)** | - | [🔊 Listen](samples/unseen%20reverb/sample1/ref.wav) |
-| **LED-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20reverb/sample1/1kbps_stage3_1250.wav) |
-| **E2E-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20reverb/sample1/1kbps_e2e_1250.wav) |
-| **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20reverb/sample1/6kbps_stage3_1250.wav) |
-| **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20reverb/sample1/6kbps_e2e_1250.wav) |
-
-#### Sample 2
-| Model | Bitrate | Audio Sample |
-| :--- | :---: | :---: |
-| **Raw Input** | - | [🔊 Listen](samples/unseen%20reverb/sample2/raw.wav) |
-| **Reference (Clean)** | - | [🔊 Listen](samples/unseen%20reverb/sample2/ref.wav) |
-| **LED-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20reverb/sample2/1kbps_stage3_1250.wav) |
-| **E2E-VoCodec** | 1 kbps | [🔊 Listen](samples/unseen%20reverb/sample2/1kbps_e2e_1250.wav) |
-| **LED-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20reverb/sample2/6kbps_stage3_1250.wav) |
-| **E2E-VoCodec** | 6 kbps | [🔊 Listen](samples/unseen%20reverb/sample2/6kbps_e2e_1250.wav) |
 
 ## ⚡ Computational Efficiency Analysis
 
@@ -256,13 +242,11 @@ Scaling RVQ depth from 1 layer (1 kbps) to 6 layers (6 kbps) incurs negligible i
 
 **Scaling Property:** The computational overhead of increasing bitrate is minimal, making LED-VoCodec suitable for adaptive bitrate applications.
 
-### 4. Latency Under Different Chunk Sizes
-Because the VoCodec backbone is inherently designed as a causal model, its algorithmic latency is decoupled from the inference chunk size. The theoretical latency is exclusively dictated by the STFT window length, calculated directly as $\text{Window Length} / \text{Sampling Rate}$. Therefore, varying the chunk size during real-time streaming alters the I/O buffering but does not alter the core algorithmic latency of the model itself.
 
-### 5. Training Overhead
+### 4. Training Overhead
 While progressive distillation (Stages 1-3) requires sequential optimization phases that increase total offline training time compared to a single-stage E2E run, this is a one-time developmental cost. For edge AI scenarios, the absolute priority is minimizing inference overhead. The LED paradigm effectively trades increased limited offline training complexity for an optimal, zero-overhead inference architecture.
 
-### 6. Real-Time Factor (RTF) Measurements
+### 5. Real-Time Factor (RTF) Measurements
 - **LED-VoCodec**: RTF = 0.0621
 - **LED-VoCodec-L**: RTF = 0.1607
 
@@ -278,7 +262,7 @@ We provide rigorous theoretical analysis to understand the geometric properties 
 For degraded input speech, residual noise and reverberation cause encoder output features to deviate from the ideal clean latent trajectory, leading to code mis-selection during vector quantization: the quantizer selects code $\mathbf{c}_j$ instead of the ground-truth clean code $\mathbf{c}_i$.
 
 The resulting quantization error in Euclidean space is determined by the distance between the mis-selected code pair:
-$$d^2(\mathbf{c}_i, \mathbf{c}_j) = \|\mathbf{c}_i\|^2 + \|\mathbf{c}_j\|^2 - 2\|\mathbf{c}_i\|\|\mathbf{c}_j\|\cos\theta_{ij}$$
+$d^2(\mathbf{c}_i, \mathbf{c}_j) = \|\mathbf{c}_i\|^2 + \|\mathbf{c}_j\|^2 - 2\|\mathbf{c}_i\|\|\mathbf{c}_j\|\cos\theta_{ij}$
 where $\theta_{ij}$ is the angle between the two code vectors.
 
 As empirically validated in our manuscript, the pairwise angular distributions of codebooks are nearly identical between the E2E baseline and the LED paradigm. Therefore, under the condition of consistent angular distribution, the upper bound of quantization error is mainly determined by the magnitude distribution of code vectors.
