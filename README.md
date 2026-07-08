@@ -168,7 +168,7 @@ Test with burst noise and clicks:
 Test at extremely low signal-to-noise ratios:
 
 ![Ultra-Low SNR Results](Figs/fig5.png)
-*Figure 5: Performance under ultra-low SNR conditions*
+*Figure 4: Performance under ultra-low SNR conditions*
 
 #### Sample 1
 | Model | Bitrate | Audio Sample |
@@ -284,23 +284,16 @@ We calculate NQE for 1,000 utterances from the LRAC Track 2 open test set (cover
 
 **E2E-VoCodec Correlation Analysis:**
 ![E2E Correlation](Figs/E2E.png)
-*Figure 8: Statistical correlation analysis between the per-utterance NQE and various objective metrics of the E2E-VoCodec model.*
+*Figure 5: Statistical correlation analysis between the per-utterance NQE and various objective metrics of the E2E-VoCodec model.*
 
 **LED-VoCodec Correlation Analysis:**
 ![LED Correlation](Figs/LED.png)
-*Figure 9: Statistical correlation analysis between the per-utterance NQE and various objective metrics of the LED-VoCodec model.*
+*Figure 6: Statistical correlation analysis between the per-utterance NQE and various objective metrics of the LED-VoCodec model.*
 
 The experimental results strongly support our mechanistic claim. There is a highly significant correlation between increased NQE and degraded acoustic performance across all conditions. For instance, at the 6 kbps configuration, the E2E baseline exhibits a strong Spearman correlation of $\rho = -0.82$ between NQE and PESQ, and $\rho = -0.75$ with ESTOI, which statistically verifies that inference-time quantization error is a direct primary driver of reconstruction quality degradation. The scatter plots clearly illustrate a consistent monotonic trend: positive metrics (e.g., UTMOS, PESQ, ESTOI) degrade continuously and the negative metric (ScoreQ-ref) increases as NQE rises.
 
-### 4. Quantitative Analysis
 
-| Metric | LED-VoCodec | E2E-VoCodec | Improvement |
-|--------|-------------|-------------|-------------|
-| Coefficient of Variation (CV) | 0.12 | 0.21 | +42.9% |
-| Normalized Quantization Error (NQE) | 0.08 | 0.15 | +46.7% |
-| Latent Space Coverage | 0.89 | 0.76 | +17.1% |
-
-### 5. Conclusion
+### 4. Conclusion
 Combining the above two dimensions of analysis, we formally establish the logical chain from latent geometric properties to coding robustness: Because the decoder's output distortion is strictly bounded by the input latent error scaled by the Lipschitz constant $L$, **minimizing the latent dispersion (lower CV) fundamentally acts as a bottleneck on the maximum possible reconstruction error.** By forcing the codebook into a concentrated magnitude distribution, the LED strategy structurally guarantees that even when acoustic degradation triggers code mis-selection, the resulting geometric displacement remains strictly bounded, thereby mathematically ensuring higher resilience and reconstruction fidelity at the waveform level.
 
 Combined with the theoretical property that a smaller global CV mathematically restricts the dynamic distribution range of NQE, this effectively establishes the complete causal chain: lower codebook magnitude dispersion directly constrains severe quantization deviations during inference, which is the fundamental mechanism for preserving high audio fidelity and driving overall model performance improvements.
