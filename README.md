@@ -262,7 +262,9 @@ We provide rigorous theoretical analysis to understand the geometric properties 
 For degraded input speech, residual noise and reverberation cause encoder output features to deviate from the ideal clean latent trajectory, leading to code mis-selection during vector quantization: the quantizer selects code $\mathbf{c}_j$ instead of the ground-truth clean code $\mathbf{c}_i$.
 
 The resulting quantization error in Euclidean space is determined by the distance between the mis-selected code pair:
-$d^2(\mathbf{c}_i, \mathbf{c}_j) = \|\mathbf{c}_i\|^2 + \|\mathbf{c}_j\|^2 - 2\|\mathbf{c}_i\|\|\mathbf{c}_j\|\cos\theta_{ij}$
+
+$$d^2(\mathbf{c}_i, \mathbf{c}_j) = \|\mathbf{c}_i\|^2 + \|\mathbf{c}_j\|^2 - 2\|\mathbf{c}_i\|\|\mathbf{c}_j\|\cos\theta_{ij}$$
+
 where $\theta_{ij}$ is the angle between the two code vectors.
 
 As empirically validated in our manuscript, the pairwise angular distributions of codebooks are nearly identical between the E2E baseline and the LED paradigm. Therefore, under the condition of consistent angular distribution, the upper bound of quantization error is mainly determined by the magnitude distribution of code vectors.
@@ -303,21 +305,7 @@ Combining the above two dimensions of analysis, we formally establish the logica
 
 Combined with the theoretical property that a smaller global CV mathematically restricts the dynamic distribution range of NQE, this effectively establishes the complete causal chain: lower codebook magnitude dispersion directly constrains severe quantization deviations during inference, which is the fundamental mechanism for preserving high audio fidelity and driving overall model performance improvements.
 
-## 🏗️ Architecture Overview
-
-### LED Framework
-![LED Framework](Figs/LED.png)
-
-### Key Components
-1. **Cross-task Knowledge Distillation (CKD)**: Transfers enhancement knowledge to codec
-2. **Multi-stage Training**: Progressive refinement from enhancement to coding
-3. **Residual Vector Quantization (RVQ)**: Efficient discrete representation learning
-4. **Joint Optimization**: Simultaneous enhancement and compression objectives
-
-### E2E-VoCodec Baseline
-![E2E Framework](Figs/E2E.png)
-
-##  Citation
+<!-- ##  Citation
 
 If you find our work useful, please cite our paper:
 
@@ -328,7 +316,7 @@ If you find our work useful, please cite our paper:
   journal={arXiv preprint arXiv:2501.xxxxx},
   year={2025}
 }
-```
+``` -->
 
 ## 📞 Contact
 
