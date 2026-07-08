@@ -1,9 +1,9 @@
-```
+
 # Latent Enhancement Distillation (LED) for Joint Audio Codec and Speech Enhancement
 
 [![Status](https://img.shields.io/badge/Status-Under_Review_(TASLP)-blue)](#)
 [![Challenge](https://img.shields.io/badge/LRAC_Challenge_2025-1st_Place-gold)](#)
-```
+
 
 This repository contains the official audio demonstrations for our paper **"Latent Enhancement Distillation for Joint Audio Codec and Speech Enhancement"** (currently under review for IEEE/ACM TASLP). 
 
